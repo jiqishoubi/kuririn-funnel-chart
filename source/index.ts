@@ -3,10 +3,10 @@
  * kuririn-funnel-chart
  */
 
-import { throttle } from 'lodash'
+import throttle from 'lodash/throttle'
 
 // 解一元二次方程
-function solveQuadraticEquation(a, b, c) {
+function solveQuadraticEquation(a: number, b: number, c: number) {
   const discriminant = b * b - 4 * a * c
   if (discriminant < 0) {
     throw new Error('方程无实数解')
@@ -102,7 +102,7 @@ class KuririnFunnelChart {
     this.domCanvasRate = result.domCanvasRate
   }
 
-  initSomeDoms(dom) {
+  initSomeDoms(dom: HTMLDivElement) {
     dom.style.position = 'relative'
 
     const inDomCanvas = dom.querySelector('canvas')
@@ -450,6 +450,7 @@ class KuririnFunnelChart {
 
     // canvas hover
     // onmousemove
+    // @ts-ignore
     this.canvas.onmousemove = throttle((e) => {
       const point = {
         x: e.offsetX * this.domCanvasRate,
