@@ -1,0 +1,44 @@
+{
+  "name": "kuririn-funnel-chart",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/lib/index.cjs",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiqishoubi/kuririn-funnel-chart"
+  },
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "prettier-all": "prettier --write '**/*.{js,jsx,ts,tsx,vue,css,less,scss,md,json}'",
+    "pub": "npm run build && npm version patch && npm publish"
+  },
+  "dependencies": {
+    "history": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^2.5.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.6.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,vue,css,less,scss,md,json}": "prettier --write"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
