@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <script src="./umd/kuririn-funnel-chart.1.0.1.js"></script>
+    <style>
+      #main {
+        width: 505px;
+        height: 360px;
+        background-color: #fff;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        const myChart = kuririnFunnelChart.init(document.getElementById('main'))
+        myChart.setOption({
+          data: [
+            { name: '直播曝光人数', value: 23871, color: '#5087ec' },
+            { name: '直播观看人数', value: 18619, color: '#68bbc4' },
+            { name: '商品曝光人数', value: 14523, color: '#58a65c' },
+            { name: '商品点击人数', value: 11328, color: '#f2bd42' }, //
+            { name: '成交人数', value: 8712, color: '#ee7530' }, //
+          ],
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="main"></div>
+  </body>
+</html>

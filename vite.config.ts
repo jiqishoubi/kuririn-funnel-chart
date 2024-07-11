@@ -33,7 +33,12 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, './source/index.ts'),
       name: 'kuririn-funnel-chart',
-      fileName: 'index',
+      fileName: (format, entryName) => {
+        if (format === 'umd') {
+          return `kuririn-funnel-chart.${pkg.version}.js`
+        }
+        return `index.js`
+      },
     },
     emptyOutDir: true,
     rollupOptions: {
@@ -48,6 +53,11 @@ export default defineConfig({
         {
           format: 'cjs',
           dir: path.resolve(__dirname, 'dist/lib'),
+        },
+        {
+          format: 'umd',
+          name: 'kuririnFunnelChart',
+          dir: path.resolve(__dirname, `dist/umd`),
         },
       ],
     },

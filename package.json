@@ -1,7 +1,7 @@
 {
   "name": "kuririn-funnel-chart",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "./dist/lib/index.cjs",
   "module": "./dist/es/index.js",
@@ -20,7 +20,7 @@
     "pub": "npm run build && npm version patch && npm publish"
   },
   "dependencies": {
-    "history": "^5.0.0"
+    "kuririn-funnel-chart": "^1.0.1"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.6",
